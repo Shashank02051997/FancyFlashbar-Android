@@ -1,0 +1,20 @@
+
+esquid:UnusedPrivateMethod";Remove this unused private "positiveNegativeAction" method.(ËØöì8‚–îíÕ,
+csquid:UnusedPrivateMethod"4Remove this unused private "dismissListener" method.(»‡æ‚üÿÿÿÿ8‚–îíÕ,
+Usquid:UnusedPrivateMethod"+Remove this unused private "barTap" method.(İßáÁ8‚–îíÕ,
+isquid:UselessImportCheck";Remove this unused import 'android.graphics.BitmapFactory'.(âàºÍûÿÿÿÿ8‚–îíÕ,
+jsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(‚²”æ8‚–îíÕ,
+fsquid:UnusedPrivateMethod"7Remove this unused private "primaryActionBasic" method.(³™öëûÿÿÿÿ8‚–îíÕ,
+Xsquid:UnusedPrivateMethod".Remove this unused private "iconBasic" method.(ÕÖ™8‚–îíÕ,
+Zsquid:UnusedPrivateMethod"1Remove this unused private "iconAdvanced" method.(¤¨ÍF8‚–îíÕ,
+ksquid:UnusedPrivateMethod"<Remove this unused private "enterExitAnimationSlide" method.(…—¢Şúÿÿÿÿ8‚–îíÕ,
+bsquid:UnusedPrivateMethod"3Remove this unused private "swipeToDismiss" method.(–ÀÖäıÿÿÿÿ8‚–îíÕ,
+asquid:UnusedPrivateMethod"2Remove this unused private "progressBasic" method.(ÀÆ¿¸ûÿÿÿÿ8‚–îíÕ,
+_squid:UnusedPrivateMethod"5Remove this unused private "progressAdvanced" method.(ÎÄÜ¿8‚–îíÕ,
+isquid:UnusedPrivateMethod":Remove this unused private "primaryActionListener" method.(ĞÒÚ¼ùÿÿÿÿ8‚–îíÕ,
+asquid:UnusedPrivateMethod"7Remove this unused private "enterExitAnimation" method.(ÅÄ¿‘8‚–îíÕ,
+\squid:UselessImportCheck"4Remove this unused import 'android.graphics.Bitmap'.(¾ì8‚–îíÕ,
+`squid:UnusedPrivateMethod"1Remove this unused private "showListener" method.(„Ä±æøÿÿÿÿ8‚–îíÕ,
+]squid:UnusedPrivateMethod".Remove this unused private "vibration" method.(ÄÀåöúÿÿÿÿ8‚–îíÕ,
+isquid:UnusedPrivateMethod":Remove this unused private "primaryActionAdvanced" method.(²ÄÔÂûÿÿÿÿ8‚–îíÕ,
+osquid:S1192"NDefine a constant instead of duplicating this literal "Hello World!" 15 times.(ò¶áıÿÿÿÿ8‚–îíÕ,
