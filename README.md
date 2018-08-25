@@ -52,7 +52,7 @@ Add this to your module's `build.gradle` file (make sure the version matches the
 ```gradle
 dependencies {
 	...
-	implementation 'com.github.Shashank02051997:FancyFlashbar-Android:1.0'
+	implementation 'com.github.Shashank02051997:FancyFlashbar-Android:1.1'
 }
 ```
 
@@ -115,7 +115,8 @@ You can show an optional title in the flashbar. You can also customize the color
 ```kotlin
 Flashbar.Builder(this)
         .gravity(Flashbar.Gravity.BOTTOM)
-        .title("Hello World!")
+        .title("Success!")
+        .message("Daily whatsapp status updated successfully")
         .build();
 ```
 
@@ -124,7 +125,8 @@ You can change the color using `titleColor()`, size using `titleSizeInSp()`, `ti
 ```kotlin
 Flashbar.Builder(this)
         .gravity(Flashbar.Gravity.BOTTOM)
-        .title("Hello World!")
+        .title("Success!")
+        .message("Daily whatsapp status updated successfully")
         .titleColorRes(R.color.white)
         .titleSizeInSp(12f)
         .titleAppearance(R.style.CustomTextStyle)
@@ -198,7 +200,6 @@ Flashbar.Builder(this)
         .message("Yeah, i'm up to it! Wanna grab something to eat today or you're bu...")
         .primaryActionText("Reply")
         .primaryActionTextColorRes(R.color.colorAccent)
-        .primaryActionTextSizeInSp(20f)
         .build()
 ```
 
@@ -210,6 +211,7 @@ Flashbar.Builder(this)
         .title("Alisa Williams")
         .message("Yeah, i'm up to it! Wanna grab something to eat today or you're bu...")
         .primaryActionText("Reply")
+        .primaryActionTextSizeInSp(20f)
         .primaryActionTextColorRes(R.color.colorAccent)
         .primaryActionTapListener(object : Flashbar.OnActionTapListener {
             override fun onActionTapped(bar: Flashbar) {
@@ -229,6 +231,7 @@ Flashbar.Builder(this)
         .gravity(Flashbar.Gravity.BOTTOM)
         .title("Can we notify you ?")
         .message("Please allow us to send you notification")
+	.icon(R.drawable.email)
 	.showIcon()
         .positiveActionText("Allow")
         .negativeActionText("No, other time")
@@ -255,9 +258,9 @@ Flashbar.Builder(this)
         .gravity(Flashbar.Gravity.BOTTOM)
         .title("Congratulations!")
         .message("Congratulations! You have reached 5K points")
+        .icon(R.drawable.trophy)        
         .showIcon()
 	.enableSwipeToDismiss()      //By default this feature is disabled
-        .icon(R.drawable.email)        
         .build()
 ```
 
@@ -272,10 +275,27 @@ You can start animating the bar using `FlashAnim.with(this).animateBar()`. You c
 
 ```kotlin
 Flashbar.Builder(this)
-        .gravity(Flashbar.Gravity.TOP)
-        .title("Hello World!")
-        .message("You can change the enter/exit animation of the flashbar")
-        .backgroundColorRes(R.color.colorPrimaryDark)
+        .gravity(Flashbar.Gravity.BOTTOM)
+        .title("Stay up-to-date!")
+        .message("This way, you and your friends will see messages instantly on your phones.")
+	.enableSwipeToDismiss()         //By default this feature is disabled	
+        .icon(R.drawable.notification)
+	.showIcon()
+	.positiveActionText("Enable Notification")
+        .negativeActionText("Not Now")
+        .positiveActionTapListener(new Flashbar.OnActionTapListener() {
+                    @Override
+                    public void onActionTapped(@NotNull Flashbar bar) {
+                        bar.dismiss();
+                    }
+                })
+        .negativeActionTapListener(new Flashbar.OnActionTapListener() {
+                    @Override
+                    public void onActionTapped(@NotNull Flashbar bar) {
+                        bar.dismiss();
+                    }
+                })
+                
         .enterAnimation(FlashAnim.with(this)
                 .animateBar()
                 .duration(750)
@@ -299,12 +319,10 @@ You can start animating the icon using `FlashAnim.with(this).animateIcon()`. You
 ```kotlin
 Flashbar.Builder(this)
         .gravity(Flashbar.Gravity.TOP)
-        .title("Hello World!")
-        .message("You can show a default icon on the left side of the with view.")
-        .backgroundColorRes(R.color.colorPrimaryDark)
+        .title("Alisha liked your Tweet")
+        .message("THE BIGGEST RISK IS NOT TAKING THE RISK")
         .showIcon()
-        .icon(R.drawable.ic_drop)
-        .iconColorFilterRes(R.color.colorAccent)
+        .icon(R.drawable.heart)
         .iconAnimation(FlashAnim.with(this)
                 .animateIcon()
                 .pulse()
