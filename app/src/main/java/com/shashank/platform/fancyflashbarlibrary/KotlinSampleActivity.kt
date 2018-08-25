@@ -47,8 +47,6 @@ class KotlinSampleActivity : AppCompatActivity() {
                 //.messageColor(ContextCompat.getColor(this, R.color.white))
                 //.messageSizeInSp(24)
                 //.messageTypeface(Typeface.createFromAsset(getAssets(), "BeautifulAndOpenHearted.ttf"))
-                //.backgroundColorRes(R.color.colorPrimaryDark)
-                //.backgroundDrawable(R.drawable.bg_gradient)
                 //.overlayColorRes(R.color.modal)
                 .build()
     }

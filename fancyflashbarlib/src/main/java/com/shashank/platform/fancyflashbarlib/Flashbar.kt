@@ -230,12 +230,6 @@ class Flashbar private constructor(private var builder: Builder) {
         fun gravity(gravity: Gravity) = apply { this.gravity = gravity }
 
         /**
-         * Specifies the background drawable of the flashbar
-         */
-        fun backgroundDrawable(drawable: Drawable) = apply { this.backgroundDrawable = drawable }
-
-
-        /**
          * Sets listener to receive tap events on the surface of the bar
          */
         fun listenBarTaps(listener: OnTapListener) = apply {

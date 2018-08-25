@@ -93,8 +93,6 @@ public class JavaSampleActivity extends AppCompatActivity {
                 //.messageColor(ContextCompat.getColor(this, R.color.white))
                 //.messageSizeInSp(24)
                 //.messageTypeface(Typeface.createFromAsset(getAssets(), "BeautifulAndOpenHearted.ttf"))
-                //.backgroundColorRes(R.color.colorPrimaryDark)
-                //.backgroundDrawable(R.drawable.bg_gradient)
                 //.overlayColorRes(R.color.modal)
                 //.positiveActionTextColorRes(R.color.black)
                 //.negativeActionTextColorRes(R.color.yellow)
