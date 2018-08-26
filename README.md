@@ -1,5 +1,10 @@
 
 # Fancy Flashbar
+
+[![platform](https://img.shields.io/badge/platform-Android-yellow.svg)](https://www.android.com)
+[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
+[![](https://jitpack.io/v/Shashank02051997/FancyFlashbar-Android.svg)](https://jitpack.io/#Shashank02051997/FancyFlashbar-Android)
+
 Make your native Snackbar Fancy. A library that takes the standard Snackbar to the next level with a variety of styling options. A highly customizable, powerful and easy-to-use alerting library for Android. This library allows you to show messages or alerts in your app quickly and easily.
 
 This library allows you to show messages or alerts in your app **quickly and easily**. It can be used as an alternative to `Snackbar` or `Toast` and offers a plethora of useful features and customization options for you to play with.
