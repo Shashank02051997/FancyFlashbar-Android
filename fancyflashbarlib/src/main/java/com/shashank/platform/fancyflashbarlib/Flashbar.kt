@@ -5,11 +5,11 @@ import android.graphics.Bitmap
 import android.graphics.PorterDuff
 import android.graphics.Typeface
 import android.graphics.drawable.Drawable
-import android.support.annotation.*
-import android.support.v4.content.ContextCompat
 import android.text.Spanned
 import android.widget.ImageView.ScaleType
 import android.widget.ImageView.ScaleType.CENTER_CROP
+import androidx.annotation.*
+import androidx.core.content.ContextCompat
 import com.shashank.platform.fancyflashbarlib.Flashbar.Gravity.BOTTOM
 import com.shashank.platform.fancyflashbarlib.Flashbar.Gravity.TOP
 import com.shashank.platform.fancyflashbarlib.anim.FlashAnim
@@ -462,7 +462,7 @@ class Flashbar private constructor(private var builder: Builder) {
         /**
          * Specifies the primary action text typeface
          */
-       // fun primaryActionTextTypeface(typeface: Typeface) = apply { this.primaryActionTextTypeface = typeface }
+        // fun primaryActionTextTypeface(typeface: Typeface) = apply { this.primaryActionTextTypeface = typeface }
 
         /**
          * Specifies the primary action text size (in pixels)
@@ -517,27 +517,32 @@ class Flashbar private constructor(private var builder: Builder) {
         /**
          * Specifies the positive action text string span
          */
-        fun positiveActionText(actionText: Spanned) = apply { this.positiveActionTextSpanned = actionText }
+        fun positiveActionText(actionText: Spanned) =
+            apply { this.positiveActionTextSpanned = actionText }
 
         /**
          * Specifies the positive action text typeface
          */
-        fun positiveActionTextTypeface(typeface: Typeface) = apply { this.positiveActionTextTypeface = typeface }
+        fun positiveActionTextTypeface(typeface: Typeface) =
+            apply { this.positiveActionTextTypeface = typeface }
 
         /**
          * Specifies the positive action text size (in pixels)
          */
-        fun positiveActionTextSizeInPx(size: Float) = apply { this.positiveActionTextSizeInPx = size }
+        fun positiveActionTextSizeInPx(size: Float) =
+            apply { this.positiveActionTextSizeInPx = size }
 
         /**
          * Specifies the positive action text size (in sp)
          */
-        fun positiveActionTextSizeInSp(size: Float) = apply { this.positiveActionTextSizeInSp = size }
+        fun positiveActionTextSizeInSp(size: Float) =
+            apply { this.positiveActionTextSizeInSp = size }
 
         /**
          * Specifies the positive action text color
          */
-        fun positiveActionTextColor(@ColorInt color: Int) = apply { this.positiveActionTextColor = color }
+        fun positiveActionTextColor(@ColorInt color: Int) =
+            apply { this.positiveActionTextColor = color }
 
         /**
          * Specifies the positive action text color resource
@@ -577,27 +582,32 @@ class Flashbar private constructor(private var builder: Builder) {
         /**
          * Specifies the negative action text string span
          */
-        fun negativeActionText(actionText: Spanned) = apply { this.negativeActionTextSpanned = actionText }
+        fun negativeActionText(actionText: Spanned) =
+            apply { this.negativeActionTextSpanned = actionText }
 
         /**
          * Specifies the negative action text typeface
          */
-        fun negativeActionTextTypeface(typeface: Typeface) = apply { this.negativeActionTextTypeface = typeface }
+        fun negativeActionTextTypeface(typeface: Typeface) =
+            apply { this.negativeActionTextTypeface = typeface }
 
         /**
          * Specifies the negative action text size (in pixels)
          */
-        fun negativeActionTextSizeInPx(size: Float) = apply { this.negativeActionTextSizeInPx = size }
+        fun negativeActionTextSizeInPx(size: Float) =
+            apply { this.negativeActionTextSizeInPx = size }
 
         /**
          * Specifies the negative action text size (in sp)
          */
-        fun negativeActionTextSizeInSp(size: Float) = apply { this.negativeActionTextSizeInSp = size }
+        fun negativeActionTextSizeInSp(size: Float) =
+            apply { this.negativeActionTextSizeInSp = size }
 
         /**
          * Specifies the negative action text color
          */
-        fun negativeActionTextColor(@ColorInt color: Int) = apply { this.negativeActionTextColor = color }
+        fun negativeActionTextColor(@ColorInt color: Int) =
+            apply { this.negativeActionTextColor = color }
 
         /**
          * Specifies the negative action text color resource
@@ -626,9 +636,9 @@ class Flashbar private constructor(private var builder: Builder) {
         @JvmOverloads
         fun showIcon(scale: Float = DEFAUT_ICON_SCALE, scaleType: ScaleType = CENTER_CROP) = apply {
             require(progressPosition != ProgressPosition.LEFT,
-                    { "Cannot show icon if left progress is set" })
+                { "Cannot show icon if left progress is set" })
             require(scale > 0,
-                    { "Icon scale cannot be negative or zero" })
+                { "Icon scale cannot be negative or zero" })
 
             this.showIcon = true
             this.iconScale = scale

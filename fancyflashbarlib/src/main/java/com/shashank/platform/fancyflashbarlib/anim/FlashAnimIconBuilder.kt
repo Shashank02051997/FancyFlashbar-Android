@@ -7,9 +7,9 @@ import android.animation.PropertyValuesHolder
 import android.animation.ValueAnimator.INFINITE
 import android.animation.ValueAnimator.REVERSE
 import android.content.Context
-import android.support.annotation.InterpolatorRes
 import android.view.View
 import android.view.animation.Interpolator
+import androidx.annotation.InterpolatorRes
 
 class FlashAnimIconBuilder(context: Context) : BaseFlashAnimBuilder(context) {
 
@@ -45,7 +45,8 @@ class FlashAnimIconBuilder(context: Context) : BaseFlashAnimBuilder(context) {
     /**
      * Specifies custom interpolator for the animation
      */
-    override fun interpolator(interpolator: Interpolator) = apply { super.interpolator(interpolator) }
+    override fun interpolator(interpolator: Interpolator) =
+        apply { super.interpolator(interpolator) }
 
     /**
      * Specifies custom interpolator resource for the animation
@@ -78,9 +79,11 @@ class FlashAnimIconBuilder(context: Context) : BaseFlashAnimBuilder(context) {
         val animators = linkedSetOf<Animator>()
 
         if (pulse) {
-            val scaleAnim = ObjectAnimator.ofPropertyValuesHolder(view,
-                    PropertyValuesHolder.ofFloat("scaleX", pulseStart, pulseEnd),
-                    PropertyValuesHolder.ofFloat("scaleY", pulseStart, pulseEnd))
+            val scaleAnim = ObjectAnimator.ofPropertyValuesHolder(
+                view,
+                PropertyValuesHolder.ofFloat("scaleX", pulseStart, pulseEnd),
+                PropertyValuesHolder.ofFloat("scaleY", pulseStart, pulseEnd)
+            )
 
             scaleAnim.repeatCount = INFINITE
             scaleAnim.repeatMode = REVERSE

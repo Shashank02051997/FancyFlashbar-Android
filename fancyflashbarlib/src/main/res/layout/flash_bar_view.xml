@@ -12,7 +12,7 @@
         android:layout_height="32dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         app:srcCompat="@drawable/androidicon" />
 
     <ImageView
@@ -68,7 +68,6 @@
                             android:layout_height="@dimen/fb_progress_size"
                             android:layout_gravity="center_vertical"
                             android:layout_marginEnd="@dimen/fb_margin_progress"
-                            android:layout_marginRight="@dimen/fb_margin_progress"
                             android:visibility="gone" />
 
                         <ImageView
@@ -77,7 +76,7 @@
                             android:layout_height="@dimen/fb_icon_size"
                             android:layout_gravity="center_vertical"
                             android:layout_marginEnd="8dp"
-                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
                             android:src="@drawable/green_shield"
                             android:visibility="gone"
                             tools:visibility="visible" />
@@ -85,7 +84,7 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
+                            android:layout_marginStart="16dp"
                             android:layout_weight="8"
                             android:orientation="vertical">
 
@@ -130,7 +129,6 @@
                             android:layout_width="@dimen/fb_progress_size"
                             android:layout_height="@dimen/fb_progress_size"
                             android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="@dimen/fb_margin_progress"
                             android:layout_marginStart="@dimen/fb_margin_progress"
                             android:visibility="gone" />
 
@@ -161,7 +159,6 @@
                             style="@style/FbButtonStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="12dp"
                             android:layout_marginStart="@dimen/fb_margin_secondary_action"
                             android:textAppearance="@style/FbButtonTextStyle"
                             android:textColor="#656565"

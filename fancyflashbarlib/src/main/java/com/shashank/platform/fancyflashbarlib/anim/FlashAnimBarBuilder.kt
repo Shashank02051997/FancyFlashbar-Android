@@ -4,11 +4,11 @@ import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.content.Context
-import android.support.annotation.InterpolatorRes
 import android.view.View
 import android.view.animation.AnticipateInterpolator
 import android.view.animation.Interpolator
 import android.view.animation.OvershootInterpolator
+import androidx.annotation.InterpolatorRes
 import com.shashank.platform.fancyflashbarlib.Flashbar
 import com.shashank.platform.fancyflashbarlib.Flashbar.Gravity.BOTTOM
 import com.shashank.platform.fancyflashbarlib.Flashbar.Gravity.TOP
@@ -46,7 +46,8 @@ class FlashAnimBarBuilder(context: Context) : BaseFlashAnimBuilder(context) {
     /**
      * Specifies custom interpolator for the animation
      */
-    override fun interpolator(interpolator: Interpolator) = apply { super.interpolator(interpolator) }
+    override fun interpolator(interpolator: Interpolator) =
+        apply { super.interpolator(interpolator) }
 
     /**
      * Specifies custom interpolator resource for the animation
@@ -105,7 +106,7 @@ class FlashAnimBarBuilder(context: Context) : BaseFlashAnimBuilder(context) {
     }
 
     internal fun build(): FlashAnim {
-        requireNotNull(view, { "Target view can not be null" })
+        requireNotNull(view) { "Target view can not be null" }
 
         val compositeAnim = AnimatorSet()
         val animators = linkedSetOf<Animator>()
@@ -114,7 +115,7 @@ class FlashAnimBarBuilder(context: Context) : BaseFlashAnimBuilder(context) {
         // Slide from left/right animation is not specified, default top/bottom
         // animation is applied
         if (direction == null) {
-            translationAnim.propertyName = "translationY"
+            translationAnim.setPropertyName("translationY")
 
             when (type!!) {
                 ENTER -> when (gravity!!) {
@@ -127,7 +128,7 @@ class FlashAnimBarBuilder(context: Context) : BaseFlashAnimBuilder(context) {
                 }
             }
         } else {
-            translationAnim.propertyName = "translationX"
+            translationAnim.setPropertyName("translationX")
 
             when (type!!) {
                 ENTER -> when (direction!!) {
@@ -146,7 +147,7 @@ class FlashAnimBarBuilder(context: Context) : BaseFlashAnimBuilder(context) {
 
         if (alpha) {
             val alphaAnim = ObjectAnimator()
-            alphaAnim.propertyName = "alpha"
+            alphaAnim.setPropertyName("alpha")
             alphaAnim.target = view
 
             when (type!!) {

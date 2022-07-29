@@ -1,16 +1,16 @@
 package com.shashank.platform.fancyflashbarlib.anim
 
 import android.content.Context
-import android.support.annotation.CallSuper
-import android.support.annotation.InterpolatorRes
 import android.view.View
 import android.view.animation.*
+import androidx.annotation.CallSuper
+import androidx.annotation.InterpolatorRes
 import com.shashank.platform.fancyflashbarlib.R
 
 abstract class BaseFlashAnimBuilder(private val context: Context) {
 
     private val DEFAULT_DURATION = context.resources
-            .getInteger(R.integer.default_animation_duration).toLong()
+        .getInteger(R.integer.default_animation_duration).toLong()
 
     protected val DEFAULT_ALPHA_START = 0.2f
     protected val DEFAULT_ALPHA_END = 1.0f

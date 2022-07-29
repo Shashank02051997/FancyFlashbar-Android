@@ -47,7 +47,7 @@ internal fun Activity.getNavigationBarSizeInPx(): Int {
 }
 
 internal fun Activity?.getRootView(): ViewGroup? {
-    if (this == null || window == null || window.decorView == null) {
+    if (this == null || window == null) {
         return null
     }
     return window.decorView as ViewGroup
@@ -66,17 +66,7 @@ private fun Activity.getRealScreenSize(): Point {
     val defaultDisplay = windowManager.defaultDisplay
     val size = Point()
 
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-        defaultDisplay.getRealSize(size)
-    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-        try {
-            size.x = Display::class.java.getMethod("getRawWidth").invoke(defaultDisplay) as Int
-            size.y = Display::class.java.getMethod("getRawHeight").invoke(defaultDisplay) as Int
-        } catch (e: IllegalAccessException) {
-        } catch (e: InvocationTargetException) {
-        } catch (e: NoSuchMethodException) {
-        }
-    }
+    defaultDisplay.getRealSize(size)
     return size
 }
 
@@ -92,11 +82,7 @@ inline fun <T : View> T.afterMeasured(crossinline f: T.() -> Unit) {
     viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
         override fun onGlobalLayout() {
             if (measuredWidth > 0 && measuredHeight > 0) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    viewTreeObserver.removeOnGlobalLayoutListener(this)
-                } else {
-                    viewTreeObserver.removeGlobalOnLayoutListener(this)
-                }
+                viewTreeObserver.removeOnGlobalLayoutListener(this)
                 f()
             }
         }

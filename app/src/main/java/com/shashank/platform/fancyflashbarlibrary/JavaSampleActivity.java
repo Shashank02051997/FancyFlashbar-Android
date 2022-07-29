@@ -1,16 +1,12 @@
 package com.shashank.platform.fancyflashbarlibrary;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView.ScaleType;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.shashank.platform.fancyflashbarlib.Flashbar;
 import com.shashank.platform.fancyflashbarlib.anim.FlashAnim;
@@ -31,23 +27,17 @@ public class JavaSampleActivity extends AppCompatActivity {
         Button show = findViewById(R.id.show);
         Button dismiss = findViewById(R.id.dismiss);
 
-        show.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (flashbar == null) {
-                    flashbar = fancyFlashbar();
-                }
-                flashbar.show();
+        show.setOnClickListener(v -> {
+            if (flashbar == null) {
+                flashbar = fancyFlashbar();
             }
+            flashbar.show();
         });
 
-        dismiss.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (flashbar != null) {
-                    flashbar.dismiss();
-                    flashbar = null;
-                }
+        dismiss.setOnClickListener(v -> {
+            if (flashbar != null) {
+                flashbar.dismiss();
+                flashbar = null;
             }
         });
     }
@@ -62,18 +52,8 @@ public class JavaSampleActivity extends AppCompatActivity {
                 .showIcon()
                 .positiveActionText("Allow")
                 .negativeActionText("No, other time")
-                .positiveActionTapListener(new Flashbar.OnActionTapListener() {
-                    @Override
-                    public void onActionTapped(@NotNull Flashbar bar) {
-                        bar.dismiss();
-                    }
-                })
-                .negativeActionTapListener(new Flashbar.OnActionTapListener() {
-                    @Override
-                    public void onActionTapped(@NotNull Flashbar bar) {
-                        bar.dismiss();
-                    }
-                })
+                .positiveActionTapListener(bar -> bar.dismiss())
+                .negativeActionTapListener(bar -> bar.dismiss())
                 .enterAnimation(FlashAnim.with(this)
                         .animateBar()
                         .duration(550)
@@ -159,7 +139,7 @@ public class JavaSampleActivity extends AppCompatActivity {
 
                     @Override
                     public void onDismissed(@NotNull Flashbar bar,
-                            @NotNull Flashbar.DismissEvent event) {
+                                            @NotNull Flashbar.DismissEvent event) {
                         Log.d(TAG, "Flashbar is dismissed with event " + event);
                     }
                 })
@@ -171,21 +151,10 @@ public class JavaSampleActivity extends AppCompatActivity {
                 .gravity(Flashbar.Gravity.TOP)
                 .title("Hello World!")
                 .message("You can listen to tap events inside or outside te bar.")
-                .listenBarTaps(new Flashbar.OnTapListener() {
-                    @Override
-                    public void onTap(@NotNull Flashbar flashbar) {
-                        Log.d(TAG, "Bar tapped");
-                    }
-                })
-                .listenOutsideTaps(new Flashbar.OnTapListener() {
-                    @Override
-                    public void onTap(@NotNull Flashbar flashbar) {
-                        Log.d(TAG, "Outside tapped");
-                    }
-                })
+                .listenBarTaps(flashbar -> Log.d(TAG, "Bar tapped"))
+                .listenOutsideTaps(flashbar -> Log.d(TAG, "Outside tapped"))
                 .build();
     }
-
 
 
 }

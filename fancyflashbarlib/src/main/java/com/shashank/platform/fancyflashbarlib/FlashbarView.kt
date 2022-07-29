@@ -9,7 +9,6 @@ import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Build.VERSION.SDK_INT
 import android.os.Build.VERSION_CODES.M
-import android.support.annotation.ColorInt
 import android.text.Spanned
 import android.text.TextUtils
 import android.util.TypedValue
@@ -21,6 +20,7 @@ import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.RelativeLayout.ALIGN_PARENT_BOTTOM
 import android.widget.RelativeLayout.ALIGN_PARENT_TOP
+import androidx.annotation.ColorInt
 import com.shashank.platform.fancyflashbarlib.Flashbar.Gravity
 import com.shashank.platform.fancyflashbarlib.Flashbar.Gravity.BOTTOM
 import com.shashank.platform.fancyflashbarlib.Flashbar.Gravity.TOP
@@ -28,9 +28,7 @@ import com.shashank.platform.fancyflashbarlib.Flashbar.ProgressPosition.LEFT
 import com.shashank.platform.fancyflashbarlib.Flashbar.ProgressPosition.RIGHT
 import com.shashank.platform.fancyflashbarlib.SwipeDismissTouchListener.DismissCallbacks
 import com.shashank.platform.fancyflashbarlib.anim.FlashAnimIconBuilder
-import com.shashank.platform.fancyflashbarlib.util.convertDpToPx
 import com.shashank.platform.fancyflashbarlib.util.getStatusBarHeightInPx
-import com.shashank.platform.fancyflashbarlib.view.ShadowView
 import kotlinx.android.synthetic.main.flash_bar_view.view.*
 
 /**
@@ -43,8 +41,10 @@ import kotlinx.android.synthetic.main.flash_bar_view.view.*
  */
 internal class FlashbarView(context: Context) : LinearLayout(context) {
 
-    private val TOP_COMPENSATION_MARGIN = resources.getDimension(R.dimen.fb_top_compensation_margin).toInt()
-    private val BOTTOM_COMPENSATION_MARGIN = resources.getDimension(R.dimen.fb_bottom_compensation_margin).toInt()
+    private val TOP_COMPENSATION_MARGIN =
+        resources.getDimension(R.dimen.fb_top_compensation_margin).toInt()
+    private val BOTTOM_COMPENSATION_MARGIN =
+        resources.getDimension(R.dimen.fb_bottom_compensation_margin).toInt()
 
     private lateinit var parentFlashbarContainer: FlashbarContainerView
     private lateinit var gravity: Gravity
@@ -67,9 +67,10 @@ internal class FlashbarView(context: Context) : LinearLayout(context) {
     }
 
     internal fun init(
-            gravity: Gravity,
-            castShadow: Boolean,
-            shadowStrength: Int) {
+        gravity: Gravity,
+        castShadow: Boolean,
+        shadowStrength: Int
+    ) {
         this.gravity = gravity
         this.orientation = VERTICAL
 
@@ -88,8 +89,10 @@ internal class FlashbarView(context: Context) : LinearLayout(context) {
         }
     }
 
-    internal fun adjustWitPositionAndOrientation(activity: Activity,
-                                                 gravity: Gravity) {
+    internal fun adjustWitPositionAndOrientation(
+        activity: Activity,
+        gravity: Gravity
+    ) {
         val flashbarViewLp = RelativeLayout.LayoutParams(MATCH_PARENT, WRAP_CONTENT)
         val statusBarHeight = activity.getStatusBarHeightInPx()
 
@@ -441,8 +444,10 @@ internal class FlashbarView(context: Context) : LinearLayout(context) {
         }
     }
 
-    internal fun setProgressTint(progressTint: Int?,
-                                 position: Flashbar.ProgressPosition?) {
+    internal fun setProgressTint(
+        progressTint: Int?,
+        position: Flashbar.ProgressPosition?
+    ) {
         if (position == null || progressTint == null) return
 
         val progressBar = when (position) {
